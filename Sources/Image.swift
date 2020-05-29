@@ -9,7 +9,7 @@
 extension Image {
     static func find(named name: String, inBundle bundle: Bundle) -> Image {
         #if os(OSX)
-            return bundle.image(forResource: name)!
+            return bundle.image(forResource: NSImage.Name(rawValue: name))!
         #elseif os(watchOS)
             return UIImage(named: name)!
         #else
